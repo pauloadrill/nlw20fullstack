@@ -1,4 +1,11 @@
-body{
+body * {
+    /*border: 1px solid red;*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* content-box | border-box */
+}
+
+body {
     background-image: url("./assets/bg.jpg");
     background-repeat: no-repeat; /* keyword */
     background-size: 100% auto; /* width height */
@@ -6,4 +13,106 @@ body{
     background-color: #121214; /* HEX: rr, gg, bb */
     color: white; /* named color */
 }
+
+body *, 
+:root {
+    font-family: "Inter";
+    line-height: 160%;
+}
+
+header {
+    padding-top: 32px;
+    text-align: center;
+}
+
+header img {
+    width: 15rem;
+}
+
+main {
+    max-width: 36rem;
+    width: 90%;
+    margin: 3rem auto;
+}
+
+section {
+    background-image: linear-gradient(90deg, #9572fc 0%, #43e7ad 50%, #e2d45c 100%); /* linear-gradient(angulo, cor1, cor2, cor3) */
+    border-radius: 0.625rem;
+    padding-top: 4px;
+}
+
+section div {
+    padding: 2rem;
+    padding-top: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #2a2634;
+}
+
+section h2 {
+    letter-spacing: -0.47px; /* negative value to reduce space between letters */
+}
+
+section p {
+    letter-spacing: -0.18px; /* negative value to reduce space between letters */;
+    color: #a1a1aa; /* HEX: rr, gg, bb */;
+}
+
+/*Aminações*/
+main section {
+    opacity: 0;
+    transform: translateY(2rem);
+
+    animation-name: appear;
+    animation-duration: 700ms;
+    animation-fill-mode: forwards; /* forwards | backwards | both | none */
+}
+
+@keyframes appear {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }    
+}
+
+form {
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: wrap; /* nowrap | wrap | wrap-reverse */;
+    margin: 1.25rem 0;
+    /*flex-direction: column;*/    
+}
+
+input, select {
+    all: unset; /* reset all styles */
+    border: 2px solid #9147ff; /* HEX: rr, gg, bb */
+    border-radius: 0.5rem;
+    padding: 0.675rem;
+    font-size: 0.875rem;
+    background-color: #00000066;
+}
+
+input {
+    flex: 1; /* grow shrink basis */
+}
+
+button {
+    width:100%;
+    border: 0;
+    background-image: linear-gradient(245deg, #9572fc 0%, #43e7ad 50%, #e2d45c 100%);
+    padding: 0.675rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.12px;
+
+    transition: all 0.3s; /* property duration timing-function delay */
+}
+
+button:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 1rem rgba(255, 248, 107, 0.2);
+}
+
+
 
