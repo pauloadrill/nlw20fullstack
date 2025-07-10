@@ -1,5 +1,4 @@
-body * {
-    /*border: 1px solid red;*/
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* content-box | border-box */
@@ -21,7 +20,7 @@ body *,
 }
 
 header {
-    padding-top: 32px;
+    padding-top: 2px;
     text-align: center;
 }
 
@@ -41,7 +40,7 @@ section {
     padding-top: 4px;
 }
 
-section div {
+section>div {
     padding: 2rem;
     padding-top: 1.5rem;
     border-radius: 0.5rem;
@@ -112,6 +111,44 @@ button:hover {
     cursor: pointer;
     transform: translateY(-2px);
     box-shadow: 0 5px 1rem rgba(255, 248, 107, 0.2);
+}
+
+button:disabled {
+    transition: initial;
+    transform: initial;
+    box-shadow: initial;
+    cursor: not-allowed; /* pointer | default | text | wait | help | progress | not-allowed */
+    color: black;
+}
+
+#aiResponse {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    border-left: 4px solid #43e7ad;;
+}
+
+#aiResponse ul {
+    padding-left: 1.5rem;
+    opacity: 0.8;
+}
+
+#aiResponse p {
+    color: white;
+}
+
+.loading {
+    animation: pulse 1s infinite;
+}
+
+.hidden {
+    display: none;    
+}
+
+@keyframes pulse {
+    50% {
+        opacity: 0.5;
+    }
 }
 
 
